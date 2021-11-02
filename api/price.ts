@@ -4,7 +4,7 @@ import Axios from "axios";
 module.exports = async (req: VercelRequest, res: VercelResponse) => {
   const allowedPlatforms = ["PC", "PS", "XB"];
 
-  res.setHeader('Cache-Control', 'max-age=0, s-maxage=30000');
+  res.setHeader('Cache-Control', 'max-age=300, public');
 
   if (!req.query.resourceId || !req.query.platform) {
     res.statusCode = 400;
