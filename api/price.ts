@@ -5,7 +5,6 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
   const allowedPlatforms = ["PC", "PS", "XB"];
 
   if (!req.query.resourceId || !req.query.platform) {
-    res.setHeader("Cache-control", "max-age=300");
     res.statusCode = 400;
     res.send({ message: "Error, you must provide a valid resourceId and platform." });
     return;
@@ -25,6 +24,7 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
 
     prices[resourceId] = price;
   }
+  res.setHeader("Cache-control", "max-age=300");
 
   res.send(prices);
 };
