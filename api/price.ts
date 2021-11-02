@@ -24,7 +24,7 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
 
     prices[resourceId] = price;
   }
-  res.setHeader("Cache-control", "max-age=300");
+  res.setHeader("cache-control", "max-age=300");
 
   res.send(prices);
 };
