@@ -4,8 +4,6 @@ import Axios from "axios";
 module.exports = async (req: VercelRequest, res: VercelResponse) => {
   const allowedPlatforms = ["PC", "PS", "XB"];
 
-  res.setHeader('Cache-Control', 'max-age=300, public');
-
   if (!req.query.resourceId || !req.query.platform) {
     res.statusCode = 400;
     res.send({ message: "Error, you must provide a valid resourceId and platform." });
