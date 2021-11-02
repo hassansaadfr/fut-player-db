@@ -6,6 +6,7 @@
         { "key": "access-control-allow-origin", "value": "*" },
         { "key": "access-control-allow-methods", "value": "*" },
         { "key": "access-control-allow-headers", "value": "*" }
+        {"key": "Cache-control", "value": "max-age=300, public"}
       ]
     }
   ]
